@@ -436,7 +436,8 @@ unsigned FVlcMediaCallbacks::StaticVideoSetupCallback(void** Opaque, char* Chrom
 	}
 
 	// get other video properties
-	Callbacks->VideoFrameDuration = FTimespan::FromSeconds(1.0 / FVlc::MediaPlayerGetFps(Callbacks->Player));
+	//Callbacks->VideoFrameDuration = FTimespan::FromSeconds(1.0 / FVlc::MediaPlayerGetFps(Callbacks->Player));
+        Callbacks->VideoFrameDuration = FTimespan::FromMilliseconds(1);
 
 	// initialize decoder
 	Lines[0] = Callbacks->VideoBufferDim.Y;
